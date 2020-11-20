@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PT_Basic_CC_Move : MonoBehaviour {
-    public float fl_MovementSpeed = 6f;
-    public float fl_gravity = 2f;
-    public float fl_JumpForce = 0.8f;
+    public float fl_MovementSpeed = 10f;
+    public float fl_gravity = 1.5f;
+    public float fl_JumpForce = 0.5f;
     private Vector3 V3_move_direction = Vector3.zero;
 
     private bool jumpPressed;
@@ -20,6 +20,12 @@ public class PT_Basic_CC_Move : MonoBehaviour {
     void Update()
     {
 
+        if (Input.GetButtonUp("Jump"))
+        {
+            jumpPressed = true;
+        }else{
+            jumpPressed = false;
+        }
 
         if (cc_Reference_To_Character_Controller.isGrounded)
         {
@@ -28,7 +34,7 @@ public class PT_Basic_CC_Move : MonoBehaviour {
             V3_move_direction.z = Input.GetAxis("Vertical");
             V3_move_direction = V3_move_direction * fl_MovementSpeed * Time.deltaTime;
 
-            if (Input.GetButtonUp("Jump"))
+            if (jumpPressed)
             {
                 V3_move_direction.y = fl_JumpForce;
             }

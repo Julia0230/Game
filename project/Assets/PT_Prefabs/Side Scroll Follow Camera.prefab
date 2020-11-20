@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 307379294202478455}
   - component: {fileID: 307379294202478408}
-  - component: {fileID: 307379294202478409}
   - component: {fileID: 307379294202478410}
   - component: {fileID: 307379294202478411}
   - component: {fileID: 307379294202478454}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Side Scroll Follow Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307379294202478412}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.845, y: 2.4390001, z: -20.84}
+  m_LocalPosition: {x: 1.845, y: 20.63, z: -20.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,9 +46,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -77,14 +77,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!92 &307379294202478409
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307379294202478412}
-  m_Enabled: 1
 --- !u!124 &307379294202478410
 Behaviour:
   m_ObjectHideFlags: 0
