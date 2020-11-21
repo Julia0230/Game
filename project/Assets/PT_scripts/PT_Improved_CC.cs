@@ -15,22 +15,28 @@ public class PT_Improved_CC : MonoBehaviour
 
     private CharacterController _controller;
     private Vector3 _velocity;
-    private bool _isGrounded = true;
-    private Transform _groundChecker;
+    public bool _isGrounded = true;
+    public Transform _groundChecker;
 
 
     void Start()
     {
         _controller = GetComponent<CharacterController>();
-        _groundChecker = transform.GetChild(0);
+        _groundChecker = transform.GetChild(1);
     }
 
     void Update()
-    {
-        _isGrounded = Physics.CheckSphere(_groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+    { 
+       if(_controller.isGrounded)
+         {_isGrounded = true;  }
+         else
+         {
+             _isGrounded = false;
+         }
         if (_isGrounded && _velocity.y < 0)
-            _velocity.y = 0f;
-
+           { _velocity.y = 0f;
+        
+           }
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         _controller.Move(move * Time.deltaTime * Speed);
         if (move != Vector3.zero)
@@ -52,6 +58,8 @@ public class PT_Improved_CC : MonoBehaviour
         _velocity.z /= 1 + Drag.z * Time.deltaTime;
 
         _controller.Move(_velocity * Time.deltaTime);
+
+  
     }
 
 }

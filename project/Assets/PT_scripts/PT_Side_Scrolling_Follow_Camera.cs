@@ -6,7 +6,7 @@ public class PT_Side_Scrolling_Follow_Camera : MonoBehaviour {
 
     public GameObject go_thingToBeFollowed;
     public float fl_distanceOn_zAxis = 10f;
-    public float fl_distanceOn_xAxis = -3f;
+    public float fl_distanceOn_xAxis = 0f;
     public float fl_distanceOn_yAxis = -3f;
     public bool bl_pointAt = true;
     private Vector3 v3_new_camera_position = Vector3.zero;
