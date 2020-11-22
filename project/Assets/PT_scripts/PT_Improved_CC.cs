@@ -33,6 +33,7 @@ public class PT_Improved_CC : MonoBehaviour
          {
              _isGrounded = false;
          }
+         
         if (_isGrounded && _velocity.y < 0)
            { _velocity.y = 0f;
         

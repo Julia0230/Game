@@ -19,9 +19,9 @@ public class IS_death : MonoBehaviour
     }
 
 void OnTriggerEnter(Collider other)
-{
-    print("Death");
+{ if(other.gameObject.tag == "Player")
+  {   print("Death");
    other.transform.position = respawn.transform.position;
+   }
 }
-
 }
