@@ -20,32 +20,19 @@ public class PT_Physics_Character : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-        //playing with wall running
-        //make foot more than 1 in z axis
-        //characterRB.useGravity = true;
+	void Update () {
         if (footScript.isGrounded)
         {
             if (characterRB.velocity.magnitude < maxVelocity)
             {
-
                 V3_move_direction.x = Input.GetAxis("Horizontal");
                 V3_move_direction.y = 0;
                 V3_move_direction.z = Input.GetAxis("Vertical");
-
-                Debug.Log("Move V3");
-                Debug.Log(V3_move_direction);
-
                 V3_move_direction = V3_move_direction * fl_MovementSpeed * Time.deltaTime;
-
-
                 if (V3_move_direction!=Vector3.zero)
                 {
-                    Debug.Log("Stuff");
                     characterRB.AddRelativeForce(V3_move_direction);
                     characterRB.drag = movingDrag;
-                    //playing with wall running
-                    //characterRB.useGravity = false;
                 }
                 else
                 {
@@ -53,11 +40,13 @@ public class PT_Physics_Character : MonoBehaviour {
                 }
                 
             }
-            
+           else
+           {
+                characterRB.drag = groundDrag;
+           }
 
             if (Input.GetButton("Jump"))
             {
-                Debug.Log("Move Jump");
                 characterRB.AddRelativeForce(transform.up * fl_JumpForce);
                 characterRB.drag = airDrag;
             }

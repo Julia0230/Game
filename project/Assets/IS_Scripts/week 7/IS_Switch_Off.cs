@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IS_Switch_On : MonoBehaviour
+public class IS_Switch_Off : MonoBehaviour
 {
-    public GameObject ObjectToBeActivated;
+    public GameObject ObjectToBeDeactivated;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +21,7 @@ void OnTriggerEnter(Collider other)
 {
    if(other.gameObject.tag == "Player")
    {
-       ObjectToBeActivated.SetActive(true);
+       ObjectToBeDeactivated.SetActive(false);
    }
-
 }
-
 }

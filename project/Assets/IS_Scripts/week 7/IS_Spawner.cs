@@ -12,7 +12,6 @@ public class IS_Spawner : MonoBehaviour
 private float nextTime;
 private int countSoFar = 0;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,15 +27,9 @@ private int countSoFar = 0;
     { //spawn if either infinite is set or the number of spawns have been/not been reached
         if(infinite || countSoFar < numberOfTimes)
 {
-Instantiate(go_spawnee, transform.position, transform.rotation);
-//update count
-countSoFar++;
-//set the next time to spawn
-nextTime = Time.time + timeBetween;
-
-}
-
-    }
-        }
-    }
-}
+        Instantiate(go_spawnee, transform.position, transform.rotation);
+    //update count
+         countSoFar++;
+    //set the next time to spawn
+        nextTime = Time.time + timeBetween;
+}}}}}

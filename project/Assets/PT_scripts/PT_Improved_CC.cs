@@ -22,7 +22,7 @@ public class PT_Improved_CC : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
-        _groundChecker = transform.GetChild(1);
+        _groundChecker = transform.GetChild(0);
     }
 
     void Update()

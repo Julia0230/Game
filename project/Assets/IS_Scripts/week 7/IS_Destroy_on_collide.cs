@@ -21,6 +21,5 @@ public class IS_Destroy_on_collide : MonoBehaviour
   {
       Destroy(gameObject);
   }
-
     }
 }
