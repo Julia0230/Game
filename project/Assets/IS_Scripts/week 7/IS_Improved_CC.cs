@@ -7,7 +7,7 @@ public class IS_Improved_CC : MonoBehaviour
 {
     public float Speed = 5f;
     public float JumpHeight = 2f;
-    public float Gravity = -9.81f;
+    public float Gravity =  -20.81f;
     public float GroundDistance = 0.2f;
     public float DashDistance = 5f;
     public LayerMask Ground;
