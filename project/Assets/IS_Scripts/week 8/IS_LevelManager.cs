@@ -23,6 +23,7 @@ public class IS_LevelManager : MonoBehaviour
         if(timeComplete < Time.time)
         {
             messageBox.gameObject.SetActive(false);
+            infoBar.gameObject.SetActive(false);
         }
     }
     public void ShowMessage(string currentMessage)
