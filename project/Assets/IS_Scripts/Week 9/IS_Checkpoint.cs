@@ -6,6 +6,7 @@ public class IS_Checkpoint : MonoBehaviour
 {
     public Material Mat1;
     public Material Blue;
+    public Transform NextCheckpoint;
 
     private Renderer _Renderer;
     private IS_LevelManager levelManagerReference;
@@ -28,11 +29,11 @@ public class IS_Checkpoint : MonoBehaviour
     void OnTriggerEnter(Collider other)
 {
     //print (_Render.material.name);
-    if(_Renderer.material.name == "Blue (Instance)")
+    if(_Renderer.material.name == "Light blue (Instance)")
     {
         //print("Change");
         _Renderer.material = Mat1;
-        levelManagerReference.lastGoodCheckpoint = transform;
+        levelManagerReference.lastGoodCheckpoint = NextCheckpoint.transform;
     }
 
 }
