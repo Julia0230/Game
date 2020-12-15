@@ -30,7 +30,7 @@ private GameObject levelManager;
 private void OnTriggerEnter(Collider other)
 {
 
-    if(other.gameObject.tag == "Player")
+    if(other.gameObject.tag == "Player" || other.gameObject.tag == "Box")
     {
         //this doesnt work with cc as it would need to happen in
         // other.gameObject.transform.position = respawnPoint.transform.position;
@@ -39,6 +39,8 @@ private void OnTriggerEnter(Collider other)
         respawn = true;
         collidingPlayerCharater = other.gameObject;
     }
+
+
 
 }
 }

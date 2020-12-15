@@ -29,7 +29,7 @@ public class IS_Checkpoint : MonoBehaviour
     void OnTriggerEnter(Collider other)
 {
     //print (_Render.material.name);
-    if(_Renderer.material.name == "Light blue (Instance)")
+    if(_Renderer.material.name == "Light blue (Instance)" && other.gameObject.tag == "Player" )
     {
         //print("Change");
         _Renderer.material = Mat1;

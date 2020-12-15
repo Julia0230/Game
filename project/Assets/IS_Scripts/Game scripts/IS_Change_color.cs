@@ -21,9 +21,9 @@ public class IS_Change_color : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
 {
-   if(other.gameObject.tag == "Player")
-   {
+  
+   
         ObjectThatChangeColor.GetComponent<MeshRenderer> ().material = Mat;
-   }
+   
 }
 }
