@@ -27,15 +27,15 @@ public class IS_Checkpoint : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-{
-    //print (_Render.material.name);
+{     if(other.gameObject.tag=="Player")
+    {//print (_Render.material.name);
     if(_Renderer.material.name == "Light blue (Instance)" && other.gameObject.tag == "Player" )
     {
         //print("Change");
         _Renderer.material = Mat1;
         levelManagerReference.lastGoodCheckpoint = NextCheckpoint.transform;
     }
-
+    }
 }
 
 }
